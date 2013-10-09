@@ -1,0 +1,17 @@
+<h1>ブログ</h1>
+
+
+
+<ul>
+	<% @projects.each do |project|%>
+	<li>
+		<%= link_to project.title, project_path(project.id) %>
+		<span style="padding-left: 20px">
+		<%= project.tweet %>
+		</span>
+	</li>
+	<% end %>
+
+</ul>
+
+<%= link_to "Add new", new_project_path %>

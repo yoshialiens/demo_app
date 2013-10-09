@@ -1,0 +1,12 @@
+<h1><%= @project.title %></h1>
+
+
+
+<p>
+	<span style="padding-left: 20px">
+		<%= @project.tweet %>
+	</span>
+</p>
+
+<%= link_to "Edit", edit_project_path %>
+<%= link_to "[Delete]", project_path, method: :delete, data: { confirm: "本当に消去しますか？" } %>

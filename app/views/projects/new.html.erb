@@ -1,0 +1,17 @@
+<h1><%= @project.title %></h1>
+
+
+
+<%= form_for @project do |f| %>
+ <p>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %>
+</p>
+ <p>
+	<%= f.label :tweet %><br>
+	<%= f.text_field :tweet %>
+</p>
+ <p>
+	<%= f.submit %>
+</p>
+<% end %>
