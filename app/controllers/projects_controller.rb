@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 	before_action  :set_project, only: [:show, :edit, :update, :destroy]
-	
+	before_filter :authenticate_user!
 
 	def index
 		@projects = Project.all
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
 		redirect_to projects_path
 	end
 
-	 def destroy
+	def destroy
 		@project.destroy
 		redirect_to projects_path
 	end
@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
  
 	def project_params
 		params[:project].permit(:title ,:tweet)
+	    params.require(:project).permit(:title ,:tweet ,:avatar)
 	end
 
 	def set_project

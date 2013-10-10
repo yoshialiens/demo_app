@@ -6,6 +6,9 @@
 	<span style="padding-left: 20px">
 		<%= @project.tweet %>
 	</span>
+	<div class="avatar">
+    	<%= image_tag @project.avatar(:large) %>
+  </div>
 </p>
 
 <%= link_to "Edit", edit_project_path %>

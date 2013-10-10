@@ -8,6 +8,7 @@
 		<%= link_to project.title, project_path(project.id) %>
 		<span style="padding-left: 20px">
 		<%= project.tweet %>
+		<%= image_tag project.avatar(:medium) %>
 		</span>
 	</li>
 	<% end %>
