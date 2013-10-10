@@ -45,4 +45,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'paperclip'	
-gem 'devise'	
+gem 'devise'
+gem 'rails_12factor'
