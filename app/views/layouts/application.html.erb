@@ -7,22 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
+  <header>
+    <div class="container">
+    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+    <p>
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+       <%= link_to 'プロフィールを編集', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "サインアップ", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+    </p>
+    </div>
+  </header>
+<div class="container">
 <%= yield %>
+</div><!-- /container -->
 
+<div class="container">
 <%= link_to "HOME", projects_path %>
+</div><!-- /container -->
 
-        <p>
-          <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-          <% end %>
-        </p>
+<footer>
+	<div class="container">
+		<div class="footer_img">
+			<img src="http://www.vmlab.jp/common/img/logo-footer.png" height="47" width="280">
+		</div>
+		<p class="legal">
+		    © 2013 V.M.L. All Rights Reserved.
+		</p>
+	</div>
+</footer>
+
 </body>
 </html>

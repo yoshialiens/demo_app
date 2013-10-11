@@ -1,8 +1,7 @@
 <h1><%= @project.title %></h1>
 
 
-
-<%= form_for @project do |f| %>
+<%= form_for @project, :html => { :multipart => true }  do |f| %>
  <p>
 	<%= f.label :title %><br>
 	<%= f.text_field :title %>

@@ -5,7 +5,8 @@ ruby "1.9.3"
 gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+group :development, :test do
+gem 'mysql2' end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -48,3 +49,7 @@ end
 gem 'paperclip'	
 gem 'devise'
 gem 'rails_12factor'
+
+group :production do
+gem 'pg'
+end

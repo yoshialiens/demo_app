@@ -1,37 +1,43 @@
 <a id="TOP" name="TOP"></a>
-<header class="home"><!-- HEADER -->
-<div class="container">
-<div class="onecol">	
-<a class="logo" href="/">Transformation Tools</a>
-<button class="nav-button">Toggle Navigation</button>
-<ul class="menu">
-<li><a href="/about" >ABOUT</a></li>
-<li><a href="/profile" >PROFILE</a></li>
-<li><a href="/news" >NEWS</a></li>
-<li><a href="/project" >PROJECT</a></li>
-<li><a href="/login" >LOG IN</a></li>
-<li><a href="http://audiocybernetic.cart.fc2.com" target="_blank">SHOP</a></li>
-<li><a href="/contact" >CONTACT</a></li>
-</ul>
-</div>
-</div>
-</header><!-- /HEADER -->
+<!-- HEADER -->
+<header class="home">
+  <div class="container">
+    <div class="onecol">	
+      <a class="logo" href="/">Transformation Tools</a>
+      <button class="nav-button">Toggle Navigation</button>
+      <ul class="menu">
+        <li><a href="/about" >ABOUT</a></li>
+        <li><a href="/profile" >PROFILE</a></li>
+        <li><a href="/news" >NEWS</a></li>
+        <li><a href="/project" >PROJECT</a></li>
+        <li><a href="/login" >LOG IN</a></li>
+        <li><a href="http://audiocybernetic.cart.fc2.com" target="_blank">SHOP</a></li>
+        <li><a href="/contact" >CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- /HEADER -->
 
+<!-- MAIN -->
 <h1>ブログ</h1>
 
 
-
+<div class="block">
 <ul>
+	<!-- tweet_block -->
 	<% @projects.each do |project|%>
-	<li>
-		<%= link_to project.title, project_path(project.id) %>
-		<span style="padding-left: 20px">
-		<%= project.tweet %>
-		<%= image_tag project.avatar(:medium) %>
-		</span>
-	</li>
+	<li class="content">
+		<h3><%= link_to project.title, project_path(project.id) %></h3></a>
+		<p class="img"><%= image_tag project.avatar(:medium) %></p>
+		<p class="tweet"><%= project.tweet %></p>
+	</li><!-- /content -->
 	<% end %>
-
+	<!-- /tweet_block -->
 </ul>
+</div><!-- /block-->
 
 <%= link_to "Add new", new_project_path %>
+
+
+<!-- /MAIN -->
